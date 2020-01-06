@@ -1,14 +1,9 @@
 <div class="std-card">
     <div class="std-card-body">
-            <h5 class="std-name">Name : Deema</h5>
-            <p class="std-major">Majo : IT</p>
-            <p class="std-id">ID : 12</p>
-            <a routerLink="/studentview">view details</a>
-    </div>
-    <div class="std-card-body">
-            <h5 class="std-name">Name : Lama</h5>
-            <p class="std-major">Majo : CS</p>
-            <p class="std-id">ID : 13</p>
+            <h5 class="std-name">{{student.name}}</h5>
+            <p class="std-major">{{student.major}}</p>
+            <div class="circle" [ngStyle]="{'background-color': student.color}" (click)="sendMessageToParent(messageToSendC)"></div>
+            <a [routerLink]="[ '/studentview',student.name]">view details</a>
     </div>
 </div>
 <router-outlet></router-outlet>

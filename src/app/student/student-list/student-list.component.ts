@@ -14,11 +14,14 @@ export class StudentListComponent implements OnInit {
 students = [
   {
     name:"Deema",
-    major:"IT"
+    major:"IT",
+    color:"#eee"
   },
   {
     name:"Lama",
-    major:"CS"
+    major:"CS",
+    color:"#FF0000"
   }
 ]
+
 }

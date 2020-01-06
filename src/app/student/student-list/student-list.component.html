@@ -1,4 +1,4 @@
 
-<h2>Students</h2>
-<app-student-item></app-student-item>
-
+<div *ngFor="let student of students">
+        <app-student-item [student]="student"></app-student-item>
+</div>

@@ -1,0 +1,8 @@
+<div class="std-card">
+        <div class="std-card-body">
+                <h5 class="mat-name">{{student.name}}</h5>
+                <p class="mat-no">{{student.major}}</p>
+                <a [routerLink]="[ '/materialview',material.name]">view details</a>
+        </div>
+    </div>
+    <router-outlet></router-outlet>

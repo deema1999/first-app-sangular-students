@@ -9,7 +9,7 @@ import { StudentViewComponent } from './student/student-view/student-view.compon
 const appRoutes: Routes = [
   { path: 'studentlist', component: StudentListComponent },
   { path: 'studentitem', component: StudentItemComponent },
-  { path: 'studentview', component: StudentViewComponent }
+  { path: 'studentview/:name', component: StudentViewComponent }
   
 ];
 @NgModule({

@@ -8,12 +8,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class StudentItemComponent implements OnInit {
 
   @Input() student: any;
-  @Output() messageToEmit = new EventEmitter<string>();
+  @Output() public messageToEmit = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
-  sendMessageToParent(message: string) {
-    this.messageToEmit.emit(message)
+  sendMessageToParent() {
+    this.messageToEmit.emit(this.student.color)
 }
 }

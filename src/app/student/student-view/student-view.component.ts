@@ -18,6 +18,6 @@ export class StudentViewComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
     this.name = params['name'];
     });
-    //console.log(this.student.name);
+    
  }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-material-view',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialViewComponent implements OnInit {
 
-  constructor() { }
+  @Input() public name;
+  sub: any;
+ 
+  constructor( private route: ActivatedRoute) { }
 
   ngOnInit() {
-  }
-
+ 
+    this.sub = this.route.params.subscribe(params => {
+    this.name = params['name'];
+    });
+    
+ }
 }

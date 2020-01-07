@@ -5,13 +5,14 @@
 .std-card-body {
     width: 10%;
     background-color: rgb(148, 93, 143);
-    text-align: center;
+    padding-left: 20px;
     font-size: 20px;
 }
-.circle {
 
+.circle {
+    border: none;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    text-align: center;
+
 }

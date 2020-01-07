@@ -15,13 +15,15 @@ students = [
   {
     name:"Deema",
     major:"IT",
-    color:"#eee"
+    color:"#858185"
   },
   {
     name:"Lama",
     major:"CS",
-    color:"#FF0000"
+    color:"#F4E444"
   }
 ]
+
+public message = "";
 
 }

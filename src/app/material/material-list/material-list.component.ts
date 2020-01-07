@@ -11,5 +11,19 @@ export class MaterialListComponent implements OnInit {
 
   ngOnInit() {
   }
+  materials = [
+    {
+      name : "book",
+      price: "5$",
+      color: "#eee"
+    },
+    {
+      name : "bag",
+      price: "20$",
+      color: "#F444E7"
+    }
+    
+  ]
+  public message = "";
 
 }

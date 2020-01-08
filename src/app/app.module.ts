@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { StudentListComponent } from './student/student-list/student-list.component';
 import { StudentItemComponent } from './student/student-item/student-item.component';
 import { StudentViewComponent } from './student/student-view/student-view.component';
 import { MaterialItemComponent } from './material/material-item/material-item.component';
 import { MaterialViewComponent } from './material/material-view/material-view.component';
 import { MaterialListComponent } from './material/material-list/material-list.component';
+import { AddStudentComponent } from './student/add-student/add-student.component';
 
 const appRoutes: Routes = [
   { path: 'studentlist', component: StudentListComponent },
@@ -15,7 +17,8 @@ const appRoutes: Routes = [
   { path: 'studentview/:name', component: StudentViewComponent },
   { path: 'materiallist', component: MaterialListComponent },
   { path: 'materialitem', component: MaterialItemComponent },
-  { path: 'materialview/:name', component: MaterialViewComponent }
+  { path: 'materialview', component: MaterialViewComponent },
+  { path: 'addstudent', component: AddStudentComponent }
   
   
 ];
@@ -27,10 +30,12 @@ const appRoutes: Routes = [
     StudentViewComponent,
     MaterialItemComponent,
     MaterialViewComponent,
-    MaterialListComponent
+    MaterialListComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

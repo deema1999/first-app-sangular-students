@@ -1,9 +1,7 @@
-<div class="std-card">
-    <div class="std-card-body" >
-            <h5 class="std-name" [routerLink]="[ '/studentview',student.name]">Name : {{student.name}}</h5>
-            <p class="std-major">Major : {{student.major}}</p>
-            <button class="circle"  [style.background-color]="student.color" (click)="sendMessageToParent()"></button>
-           
-    </div>
+<div>
+    <h5 class="std-name" [routerLink]="[ '/studentview',student.name]">Name : {{student.name}}</h5>
+    <p class="std-major">Major : {{student.major}}</p>
+    <p class="std-birth">Date of birth : {{birth | date:"MM/dd/yy"}}</p>
+    <button class="circle"  [style.background-color]="student.color" (click)="sendMessageToParent()"></button>
 </div>
 <router-outlet></router-outlet>

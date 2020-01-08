@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { StudentsService } from './../../students.service';
 
 @Component({
   selector: 'app-student-list',
@@ -7,11 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentListComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private students: StudentsService) { }
+  studentss;
   ngOnInit() {
+    //console.log("deema on init");
+    this.studentss = this.students.getStudents();
   }
-students = [
+  /*ngAfterContentInit() {
+    console.log("deema on content");
+  }
+
+  ngDoCheck() {
+    console.log("deema on change check");
+  }
+
+  
+  ngOnChanges(changes: SimpleChanges ) {
+    console.log("deema on change");
+  }*/
+  
+/*students = [
   {
     name:"Deema",
     major:"IT",
@@ -22,7 +38,7 @@ students = [
     major:"CS",
     color:"#F4E444"
   }
-]
+]*/
 
 public message = "";
 

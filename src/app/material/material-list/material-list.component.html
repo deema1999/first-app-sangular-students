@@ -1,4 +1,4 @@
 <h1 class='list-title' [ngStyle]="{'color': message}">Materials</h1>
-<div *ngFor="let material of materials">
+<div *ngFor="let material of materialss">
         <app-material-item (messageToEmit)="message=($event)" [material]="material"></app-material-item>
 </div>

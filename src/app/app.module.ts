@@ -10,6 +10,7 @@ import { MaterialItemComponent } from './material/material-item/material-item.co
 import { MaterialViewComponent } from './material/material-view/material-view.component';
 import { MaterialListComponent } from './material/material-list/material-list.component';
 import { AddStudentComponent } from './student/add-student/add-student.component';
+import { SearchPipe } from './search.pipe';
 
 const appRoutes: Routes = [
   { path: 'studentlist', component: StudentListComponent },
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
   { path: 'studentview/:name', component: StudentViewComponent },
   { path: 'materiallist', component: MaterialListComponent },
   { path: 'materialitem', component: MaterialItemComponent },
-  { path: 'materialview', component: MaterialViewComponent },
+  { path: 'materialview/:name', component: MaterialViewComponent },
   { path: 'addstudent', component: AddStudentComponent }
   
   
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     MaterialItemComponent,
     MaterialViewComponent,
     MaterialListComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

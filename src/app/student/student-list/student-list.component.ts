@@ -10,6 +10,7 @@ export class StudentListComponent implements OnInit {
 
   constructor(private students: StudentsService) { }
   studentss;
+  name:string;
   ngOnInit() {
     //console.log("deema on init");
     this.studentss = this.students.getStudents();

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentsService } from './../../students.service';
 
 @Component({
   selector: 'app-material-list',
@@ -7,23 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialListComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private materials : StudentsService) { }
+  materialss;
   ngOnInit() {
+    this.materialss = this.materials.getMaterials();
   }
-  materials = [
-    {
-      name : "book",
-      price: "5$",
-      color: "#eee"
-    },
-    {
-      name : "bag",
-      price: "20$",
-      color: "#F444E7"
-    }
-    
-  ]
+ 
+ 
+  
   public message = "";
 
 }

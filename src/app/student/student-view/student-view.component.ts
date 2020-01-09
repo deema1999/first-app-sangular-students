@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StudentsService } from './../../students.service';
+import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/render3/view/util';
 
 
 @Component({
@@ -10,19 +11,21 @@ import { StudentsService } from './../../students.service';
 })
 export class StudentViewComponent implements OnInit {
 
-  student:any;
-  @Input() public name;
+  public student;
   sub: any;
- 
+  public studentss = [];
+  @Input() public name;
+  
   constructor( private route: ActivatedRoute,
     private students: StudentsService) { }
 
   ngOnInit() {
-
-    this.student = this.students.getStudents().find((item) => item.name === name);
     this.sub = this.route.params.subscribe(params => {
-      this.name = params['name'];
+    this.name = params['name'];
+    this.studentss = this.students.getStudents();
+    this.student = this.studentss.find(student => student.name === this.name);
     });
     
  }
+
 }

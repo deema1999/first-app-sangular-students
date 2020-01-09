@@ -9,18 +9,19 @@ import { StudentsService } from './../../students.service';
 })
 export class MaterialViewComponent implements OnInit {
 
-  
-  student;
+  @Input() public name;
+  material;
   sub: any;
  
   constructor( private route: ActivatedRoute,
-    private students: StudentsService) { }
+    private materials: StudentsService) { }
 
   ngOnInit() {
  
     this.sub = this.route.params.subscribe(params => {
-    this.student = this.students.getStudents();
+      this.name = params['name'];
     });
+    this.material = this.materials.getMaterials().find(material => material.name == this.name);
     
  }
 }

@@ -9,21 +9,23 @@ import { StudentsService } from './../../students.service';
 })
 export class StudentViewComponent implements OnInit {
 
-  public student;
+  
   sub: any;
   studentss = [];
-  @Input() public name;
+  student;
+  @Input() public id;
   
   constructor( private route: ActivatedRoute,
     private students: StudentsService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-    this.name = params['name'];
+    this.id = params['id'];
     });
-    this.students.getStudents().subscribe(data => this.studentss = data);
-    console.log(this.studentss);
-    this.student = this.studentss.find(student => student.name === this.name);
+    this.student = this.students.getStudentById(this.id);
+    //.subscribe(data => this.studentss = data);
+    //console.log(this.studentss);
+    //this.student = this.studentss.find(student => student.name === this.name);
  }
   
 }

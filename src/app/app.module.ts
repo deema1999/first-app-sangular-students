@@ -16,10 +16,10 @@ import {HttpClientModule} from '@angular/common/http'
 const appRoutes: Routes = [
   { path: 'studentlist', component: StudentListComponent },
   { path: 'studentitem', component: StudentItemComponent },
-  { path: 'studentview/:name', component: StudentViewComponent },
+  { path: 'studentview/:id', component: StudentViewComponent },
   { path: 'materiallist', component: MaterialListComponent },
   { path: 'materialitem', component: MaterialItemComponent },
-  { path: 'materialview/:name', component: MaterialViewComponent },
+  { path: 'materialview/:id', component: MaterialViewComponent },
   { path: 'addstudent', component: AddStudentComponent }
   
   

@@ -1,5 +1,8 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { StudentsService } from './../../students.service';
+import { MaterialsService } from './../../materials.service';
+import { StudentsMaterialsService } from './../../students-materials.service';
+
 
 @Component({
   selector: 'app-student-list',
@@ -8,14 +11,32 @@ import { StudentsService } from './../../students.service';
 })
 export class StudentListComponent implements OnInit {
 
-  constructor(private students: StudentsService) { }
-  studentss = [];
+  constructor(private students : StudentsService,
+    private materials : MaterialsService,
+    private sMaterials : StudentsMaterialsService) { }
+    studentss = [];
+    materialss = [];
+    sMaterialss = [];
+    viewedMaterials = [];
   name:string;
   ngOnInit() {
     //console.log("deema on init");
-    this.students.getStudents().subscribe(data => this.studentss = data);
-    
-  }
+    this.studentss = this.students.getStudents();
+    //subscribe(data => this.studentss = data);
+    this.studentss = this.students.getStudents();
+    this.materialss = this.materials.getMaterials();
+    this.sMaterialss = this.sMaterials.getStudentsMaterials();
+
+    for(let student of this.studentss) {
+      for(let material of this.materialss) {
+        for(let sMaterial of this.sMaterialss) {
+            if(student.id == sMaterial.sId && material.id == sMaterial.mId) {
+                student.mat.push(material);
+            }
+          }
+        }
+      }
+    }
   /*ngAfterContentInit() {
     console.log("deema on content");
   }

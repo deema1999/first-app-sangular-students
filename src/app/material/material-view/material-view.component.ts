@@ -9,7 +9,7 @@ import { MaterialsService } from './../../materials.service';
 })
 export class MaterialViewComponent implements OnInit {
 
-  @Input() public name;
+  @Input() public id;
   material;
   sub: any;
   materialss = [];
@@ -19,8 +19,8 @@ export class MaterialViewComponent implements OnInit {
   ngOnInit() {
  
     this.sub = this.route.params.subscribe(params => {
-      this.name = params['name'];
+      this.id = params['id'];
     });
-    this.material = this.materials.getMaterials().find(material => material.name == this.name);
- }
+    this.material = this.materials.getMaterialById(this.id);
+ }//find(material => material.name == this.name);
 }

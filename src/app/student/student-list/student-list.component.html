@@ -1,7 +1,8 @@
-
-
 <h1 class='list-title' [ngStyle]="{'color': message}">Students</h1>
-<input placeholder="Enter student name" [(ngModel)]="name">
+<div>
+        <input placeholder="Enter student name" [(ngModel)]="name">
+</div>
 <div *ngFor="let student of studentss | search : name">
+        <br>
         <div app-student-item (messageToEmit)="message=($event)" [student]="student"></div>
 </div>

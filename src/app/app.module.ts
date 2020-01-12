@@ -11,6 +11,7 @@ import { MaterialViewComponent } from './material/material-view/material-view.co
 import { MaterialListComponent } from './material/material-list/material-list.component';
 import { AddStudentComponent } from './student/add-student/add-student.component';
 import { SearchPipe } from './search.pipe';
+import {HttpClientModule} from '@angular/common/http'
 
 const appRoutes: Routes = [
   { path: 'studentlist', component: StudentListComponent },
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

@@ -9,11 +9,12 @@ import { StudentsService } from './../../students.service';
 export class StudentListComponent implements OnInit {
 
   constructor(private students: StudentsService) { }
-  studentss;
+  studentss = [];
   name:string;
   ngOnInit() {
     //console.log("deema on init");
-    this.studentss = this.students.getStudents();
+    this.students.getStudents().subscribe(data => this.studentss = data);
+    
   }
   /*ngAfterContentInit() {
     console.log("deema on content");

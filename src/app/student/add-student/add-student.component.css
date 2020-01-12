@@ -1,3 +1,4 @@
+
 input[type=text] {
     width: 20%;
     margin: 8px 0;
@@ -11,4 +12,6 @@ div {
     border-radius: 5px;
     padding: 20px;
     margin-top: 20px;
+    border: 1px solid black;
+    width: 50%;
   }

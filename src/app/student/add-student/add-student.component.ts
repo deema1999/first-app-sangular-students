@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentsService } from './../../students.service';
 
 
 @Component({
@@ -8,13 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddStudentComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private students: StudentsService) { }
+  student = {
+    name:"",
+    major:"",
+    color:""
+  };
   ngOnInit() {
   }
-  onClickSubmit() {
+  onClickSubmit(studentData) {
     alert('success');
-
+    this.student.name = studentData.name;
+    this.student.major = studentData.major;
+    this.student.color = studentData.color;
+    this.students.addStudent(this.student);
  }
 
 }

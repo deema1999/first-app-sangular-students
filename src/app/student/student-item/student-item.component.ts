@@ -4,8 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter, Host } from '@angular/c
   selector: '[app-student-item]',
   templateUrl: './student-item.component.html',
   styleUrls: ['./student-item.component.css'],
-  styles: [
-  ]
+  styles: []
 })
 export class StudentItemComponent implements OnInit {
 

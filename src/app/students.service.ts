@@ -37,4 +37,9 @@ export class StudentsService {
   getMaterials(){
     return this.materials;
   }
+
+  addStudent(student)
+  {
+    this.students.push(student);
+  }
 }

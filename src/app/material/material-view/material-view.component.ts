@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StudentsService } from './../../students.service';
+import { MaterialsService } from './../../materials.service';
 
 @Component({
   selector: 'app-material-view',
@@ -9,19 +9,18 @@ import { StudentsService } from './../../students.service';
 })
 export class MaterialViewComponent implements OnInit {
 
-  @Input() public name;
+  @Input() public id;
   material;
   sub: any;
- 
+  materialss = [];
   constructor( private route: ActivatedRoute,
-    private materials: StudentsService) { }
+    private materials: MaterialsService) { }
 
   ngOnInit() {
  
     this.sub = this.route.params.subscribe(params => {
-      this.name = params['name'];
+      this.id = params['id'];
     });
-    this.material = this.materials.getMaterials().find(material => material.name == this.name);
-    
- }
+    this.material = this.materials.getMaterialById(this.id);
+ }//find(material => material.name == this.name);
 }

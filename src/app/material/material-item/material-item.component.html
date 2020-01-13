@@ -1,6 +1,6 @@
 <div class="mat-card">
         <div class="mat-card-body">
-                <h5 class="mat-name" [routerLink]="[ '/materialview',material.name]">Name : {{material.name}}</h5>
+                <h5 class="mat-name" [routerLink]="[ '/materialview',material.id]">Name : {{material.name}}</h5>
                 <p class="mat-no">price: {{material.price}}</p>
                 <button class="circle" [ngStyle]="{'background-color': material.color}" (click)="sendMessageToParent()"></button>
         </div>

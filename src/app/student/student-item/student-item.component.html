@@ -1,7 +1,16 @@
-<div>
-    <h5 class="std-name" [routerLink]="[ '/studentview',student.name]">Name : {{student.name}}</h5>
+<div class="student" [routerLink]="[ '/studentview',student.id]">
+    <h5 class="std-name" >Name : {{student.name}}</h5>
     <p class="std-major">Major : {{student.major}}</p>
     <p class="std-birth">Date of birth : {{birth | date:"MM/dd/yy"}}</p>
+    <div class="students-materials">
+        <label>Materials :</label>
+        <div *ngFor="let material of sMat, index as i">
+            <p class="mat-id" [routerLink]="[ '/materialview',material.id]">{{i+1}} - material id : {{material.id}}</p>
+            <p class="mat-name">material name : {{material.name}}</p>
+            <p class="mat-price">material price : {{material.price}}</p>
+        </div>
+    </div>
+    <br>
     <button class="circle"  [style.background-color]="student.color" (click)="sendMessageToParent()"></button>
 </div>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> 

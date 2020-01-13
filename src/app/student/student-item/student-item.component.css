@@ -19,8 +19,20 @@
 
 :host {
     color: rgb(211, 205, 206);
-    width: 10%;
+    width: 20%;
     background-color: rgb(148, 93, 143);
     padding-left: 20px;
     font-size: 20px;
+    padding-top: 2px;
+}
+
+.students-materials {
+    border: 1px solid black;
+    background-color: black;
+    width : 70%;
+   
+}
+
+.mat-id:hover {
+    cursor: pointer;
 }
